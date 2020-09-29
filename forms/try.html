@@ -1,0 +1,19 @@
+<!doctype html>
+<head><title>try</title></head>
+
+<body><form action="try.php">
+    <input type="text" name="text"/>
+    <input type="submit" name="submit"/>
+    </form>
+    <script>
+                    $(document).ready(function(){
+                       $('input').keyup(function(){
+                          var name = $("input").val();
+                           $.post("contact.php",{suggestion:name}, function(data, status){
+                               $("#test").html(data);
+                           });
+                       }); 
+                    });
+                </script>
+    
+    </body>
